@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta name="keywords" content="airplane, airline, internet, tickets" />
+<meta name="description" content="<?php echo $description; ?>" />
+
+<title><?php echo $title; ?></title>
+
+<!-- The small site logo -->
+<link rel="icon" type="image/jpeg" href="img/logo_sm2.png" />
+
+<!-- The CSS Stylesheets -->
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- The Javascript / Jquery Files -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<script src="js/jquery.textillate.js"></script>
+<script src="js/all.js"></script>
+
+
+<!--
+
+Unable to use these files locally.
+Need write permissions for /srv/www directory and its subdirectories.
+
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/jquery.fittext.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<script src="js/jquery.textillate.js"></script>
+
+-->
+
+
+<script>
+
+// the jquery animation for the main site text
+$(function () {
+    $('.tlt').textillate({
+  // enable looping
+  loop: false,
+
+  // sets the minimum display time for each text before it is replaced
+  minDisplayTime: 2000,
+
+  // sets the initial delay before starting the animation
+  // (note that depending on the in effect you may need to manually apply 
+  // visibility: hidden to the element before running this plugin)
+  initialDelay: 0,
+
+  // set whether or not to automatically start animating
+  autoStart: true,
+
+  // custom set of 'in' effects. This effects whether or not the 
+  // character is shown/hidden before or after an animation  
+  inEffects: [],
+
+  // custom set of 'out' effects
+  outEffects: [],
+
+  // in animation settings
+  in: {
+    // set the effect name
+    effect: 'fadeInDown',
+
+    // set the delay factor applied to each consecutive character
+    delayScale: 1.5,
+
+    // set the delay between each character
+    delay: 50,
+
+    // set to true to animate all the characters at the same time
+    sync: false,
+
+    // randomize the character sequence 
+    // (note that shuffle doesn't make sense with sync = true)
+    shuffle: false
+  },
+
+  // out animation settings.
+  out: {
+    //effect: 'hinge',
+    //delayScale: 1.5,
+    //delay: 50,
+    //sync: false,
+    //shuffle: false,
+  }
+});
+})
+
+</script>
+
+</head>
+
+<body>
+
+<!-- main container -->	
+<div id="container">
+	
+	<!-- page header -->	
+	<div id="header">
+	
+	<ul id="page-top">
+		<li>
+			<h1 id="title" class="tlt">Trans American Airlines</h1>
+		</li>
+		<li>
+			<!-- user options -->
+			<div id="user-options">
+			
+
+<!--
+<form action="<?php //echo $action; ?>" method="POST" onsubmit="<?php //echo $onsubmit; ?>" name="mainform" id="mainform" style="width:100%; height:100%">
+<table align="center" style="width:100%; height:100%"><tr><td style="width:100%; height:100%; vertical-align:middle">
+<table id="main_table" align="center">
+	<tr style="height:75px">
+		<td style="width:50%; text-align:left">
+			<img class="img" src="http://iamun.com/cs416/project/img/logo.jpg" title="Helping you get from point A to point B...faster" alt="The Internet Airline" onclick="javascript: window.location = 'http://iamun.com/cs416/project';" />
+		</td>
+		<td style="width:50%; text-align:center">
+			<span>
+-->
+			<?php
+				$logStatus  = '<a class="top" href="login.php">Login</a>';
+				$welcome = $logStatus.'&nbsp; | &nbsp;<a class="top" href="register.php">Register</a>&nbsp; | &nbsp;<a class="top" href="check.php">Check Reservation</a>';
+				$logStatus  = '<a href="login.php">Login</a>';
+
+				// get the customer id cookie (if it exists)
+				$cookie = ''; // initially set the cookie value to null
+				
+				if (isset($_COOKIE['cid']))
+				{
+					$cookie = $_COOKIE['cid']; // set the cookie value to the 'cid' value
+				}
+				
+				// if the cookie exists and is not null
+				if ($cookie != '')
+				{
+					// Get the customer name from the database
+					$db = new PDO('mysql:host=localhost;dbname=woodmarc_cs442;charset=utf8', 'woodmarc_cs442', 'cs442');
+					$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+					
+					$query = "SELECT `cfirstname` FROM `Customer` WHERE `cid`=:1";
+					
+					$stmt = $db->prepare($query);
+					$stmt->execute(array(':1' => $cookie));
+					$result = $stmt->fetch();
+					
+					$cfirstname = $result[0];
+					$logStatus = '<a class="top" href="logout.php">Logout</a>';
+					$welcome = "<span class=\"top\">Welcome <b>".$cfirstname."!</b></span>&nbsp; | &nbsp;".$logStatus."&nbsp; | &nbsp;<a class=\"top\" href=\"account.php\">My Account</a>&nbsp; | &nbsp;<a class=\"top\" href=\"check.php\">Check Reservation</a>";
+					$logStatus = '<a href="logout.php">Logout</a>';
+				}
+				
+				echo $welcome;
+				
+				?>
+				
+			<!-- END user options -->			
+			</div>
+		</li>
+		
+	<!-- END page-top -->
+	</ul>
+				
+	<!-- END page header -->			
+	</div>
+	
+	<!-- page body -->			
+	<div id="body">
+	
+	<!-- background picture -->
+	<div id="main_pic">
+		<img src="img/mountain-bg2.jpg" title="Helping you get from point A to point B...faster" alt="Trans American Airlines" />
+	</div>
+	<!-- END background picture -->
+	
+	<!-- page form -->
+	<div id="form">
+		<form action="<?php echo $action; ?>" method="POST" onsubmit="<?php echo $onsubmit; ?>" name="mainform" id="mainform">
+		
+			<ul>
+				<li>
+					<input type="radio" id="trip1" name="trip" value="1">One Way
+					<input type="radio" id="trip2" name="trip" value="2">Round Trip
+					
+					<br>
+					<span>Departure Date: &nbsp;</span>
+					<select name="ddate" id="ddate" title="Select Your Departure Date">
+						<?php for ($i=0; $i<count($htmlDateList); $i++) {print $htmlDateList[$i];} ?>
+					</select>
+					
+					<br>
+					<span>Return Date: &nbsp;</span>
+					<select name="rdate" id="rdate" title="Select Your Return Date">
+						<?php for ($i=0; $i<count($htmlDateList); $i++) {print $htmlDateList[$i];} ?>
+					</select>
+				</li>
+				<li>
+					<h2>Airport</h2>
+					
+					<span>To: &nbsp;</span>
+					<select name="to" id="to" title="Select Your Arrival City">
+						<?php for ($i=0; $i<count($htmlCityList); $i++) {print $htmlCityList[$i];} ?>
+					</select>
+					
+					<br>
+					<span>From: &nbsp;</span>
+					<select name="from" id="from" title="Select Your Departure City">
+						<?php for ($i=0; $i<count($htmlCityList); $i++) {print $htmlCityList[$i];} ?>
+					</select>
+				</li>
+				<li>
+					<h2>Travelers</h2>
+					
+					<span>How many Travelers? &nbsp;</span>
+					<select name="travelers" id="travelers" title="Select The Number of Travelers">
+						<?php for ($i=0; $i<count($htmlTravelersList); $i++) {print $htmlTravelersList[$i];} ?>
+					</select>
+					
+					<input type="submit" value="Search" />
+				</li>
+			</ul>
+		
+		</form>
+	</div>
+	<!-- END page form -->
+	
+	<!-- END page body -->			
+	</div>
+	
+	<!-- page footer -->	
+	<div id="footer">
+		
+		<ul>
+			<li>
+				<ul>
+					<li>User Options</li>
+					<li><?php echo $logStatus; ?></li>
+					<li><a href="register.php">Register</a></li>
+					<li><a href="check.php">Check Reservation</a></li>
+					<li><a href="contact">Contact Information</a></li>
+					<li><a href="help">Help</a></li>
+					<li><a href="rules.php">Website Rules</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>Call Us</li>
+					<li>
+						Phone:<br><br>
+						
+						1-800-555-7971<br>
+						(within U.S., Canada, and Puerto Rico)<br><br>
+						
+						817-555-6100<br><br>
+
+						Fax: 817-555-6015<br><br>
+						
+						8:00 a.m. - 6:00 p.m. (CT)<br>
+						Monday - Friday
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>Locate Us</li>
+					<li>
+						Trans American Airlines<br>
+						5123 Trans American Blvd.<br>
+						MD 5307<br>
+						Fort Worth, TX 76155<br>
+					</li>
+				</ul>
+			</li>
+			<li>Copyright 2013 &copy Trans American Airlines Inc.</li>
+		</ul>
+	
+	<!-- END page footer -->			
+	</div>
+	
+	
+<!-- END main container -->
+</div>
+
+<!-- END html code -->
+</body>
+</html>
+
+				<!--
+			</span>
+		</td>
+	</tr>
+	<tr style="height:60px">
+		<td colspan="2" style="border-bottom: 2px #000000 groove">
+			<table align="center">
+				<tr>
+					<td class="topbutton"><a href="http://iamun.com/cs416/project">Start Over</a></td>
+					<td class="topbutton"><a href="http://iamun.com/cs416/project/deals">Great Deals</a></td>
+					<td class="topbutton"><a href="http://iamun.com/cs416/project/help">Help / Information</a></td>
+					<td class="topbutton"><a href="http://iamun.com/cs416/project/contact">Contact Us</a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+-->

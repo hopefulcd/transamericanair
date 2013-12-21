@@ -1,0 +1,15 @@
+#container{
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0;
+}
+
+#background{
+        background-image:url('img/mountain-bg2.jpg');
+        background-repeat:no-repeat;
+        opacity:0.8;
+
+        /*For Ie8 and earlier*/
+        filter:alpha(opacity=90);
+}
+

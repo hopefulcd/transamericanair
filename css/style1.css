@@ -1,0 +1,861 @@
+/* 
+Name: Trans American Airlines
+Description: This file holds the main css styles used for transamericanair.selfip.com.
+ */
+
+
+/*******************
+Global Styles
+*******************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, #container {
+	background-color: #ffffff;
+	width: 100%;
+	height: 100%;
+}
+
+h1 {
+	color: #000000;
+	font-size: 24px;
+}
+
+a {
+	font-family: Arial, Verdana, sans-serif;
+	font-style: normal;
+	color: #483D8B; 
+	border: 0px;
+}
+
+a:hover { 
+	font-family: Arial, Verdana, sans-serif;
+	color: #A52A2A;
+	text-decoration: underline;
+}
+
+/*******************
+Header
+*******************/
+
+#header {
+	min-width: 1000px;
+}
+
+#titleLink {
+	text-decoration: none;
+}
+
+#titleLink ul {
+	list-style-type: none;
+	width: 550px;
+}
+
+#titleLink ul li {
+	float: left;
+	display: inline;
+}
+
+#titleLink ul li img {
+	margin-top: 0px;
+	padding: 0px;
+}
+
+#titleLink ul li:first-child {
+	width: 100px;
+	height: 50px;
+	position: relative;
+	top: -15px;
+}
+
+#titleLink ul li:last-child {
+	margin-left: 10px;
+	text-align: left;
+}
+
+#page-top {
+	list-style-type: none;
+	width: 100%;
+	height: 50px;
+}
+
+#page-top li {
+	display:inline;
+	float: left;
+	vertical-align: bottom;
+}
+
+#page-top li:first-child {
+	text-align: left;
+	width: 30%;
+	margin-left: 20px;
+}
+
+#page-top li:last-child {
+	text-align: right;
+	width: 65%;
+	margin-right: 5px;
+}
+
+#page-top li div {
+	color: #000000;
+	vertical-align: middle;
+}
+
+#user-options {
+	text-align: right;
+	margin-top: 5px;
+	font-size: 30px;
+}
+
+#loginDrop, #registerDrop, #checkDrop {
+	width: 100%;
+	height: 50px;
+}
+
+#loginDrop input, #registerDrop input, #checkDrop input[type=text] {
+	width: 150px;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+#checkDrop input[type=button] {
+	width: 200px;
+}
+
+#main_pic {
+	position: relative;
+	width: 100%;
+	z-index:1;
+	color: #000000;
+}
+
+#main_pic img {
+	width: 100%;
+	height: 550px;
+}
+
+/*******************
+Body
+*******************/
+
+
+/************
+Home Page 
+************/
+
+#body {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+/*Calander pop up for departure date*/
+#ddatePicker{
+	position: absolute;
+	z-index: 1000;
+	top: -130px;
+	left: 245px;
+}
+
+/*calander pop up for return date*/
+#rdatePicker{
+	position: absolute;
+	z-index: 1001;
+	top: -90px;
+	left: 245px;
+}
+
+#ddate,#rdate {
+	width: 160px;
+	background-color: #ffffff;
+}
+
+#form {
+	position: absolute;
+	top: 450px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#airport {
+	text-align: center;
+}
+
+#airport div{
+	margin-left: 30px;
+	width: 250px;
+	text-align: right;
+}
+
+#tripDate {
+	text-align: right;
+}
+
+#mainform {
+	color: #000000;
+	width: 80%;
+	margin-left: 10%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	min-width: 860px;
+}
+
+#mainform ul {
+	list-style-type: none;
+	display: inline-block;
+	width: 100%;
+	height: 200px;
+}
+
+#mainform ul li {
+	display: inline;
+	float: left;
+	width: 33%;
+}
+
+#mainform ul li h2 {
+	color: #000000;
+	text-align: center;
+}
+
+#mainform select {
+	width: 150px;
+}
+
+#mainform ul li:last-child {
+	text-align:center;
+}
+
+#mainform ul li:last-child select {
+	width: 60px;
+}
+
+#mainform input[type=radio]{
+	margin-top: 30px;
+	margin-bottom: 18px;
+	margin-left: 40px;
+}
+
+#mainform input[type=submit]{
+	margin-top: 30px;
+}
+
+#mainform h2 {
+	margin-bottom: 34px;
+}
+
+/*Search button in home page*/
+#search {
+	background-color: #7777ee;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 700;
+	position: relative;
+	top: -15px;
+	cursor: pointer;
+}
+
+#search:hover {
+	background-color: #6666ff;
+	border: 2px outset #ffffff;
+}
+
+#search:active {
+	background-color: #6666ff;
+	border: 2px inset #ffffff;
+}
+
+/***********************************
+Select Departure and Return Flights
+***********************************/
+
+#resultsContainer {
+	position: absolute;
+	top:180px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#resultsForm {
+	color: #000000;
+	width: 80%;
+	margin-left: 10%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	min-height: 400px;
+}
+
+#results {
+	display: inline;
+	width: 100%;
+}
+
+#results table {
+	height: 400px;
+	width: 100%;
+	text-align: center;
+}
+
+/*******************
+the login page
+*******************/
+
+#loginContainer {
+	position: absolute;
+	top:180px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#loginForm {
+	color: #000000;
+	width: 80%;
+	margin-left: 10%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	min-height: 400px;
+}
+
+#login {
+	width: 100%;
+	height:400px;
+	display: table;
+    margin: 0 auto;
+	text-align: center;
+}
+
+#login li {
+	width: 100%;
+	position: relative;
+	top: 75px;
+    margin: 0 auto;
+}
+
+#login li table {
+	width: 400px;
+	height: 250px;
+	display: table;
+	margin: 0 auto;
+}
+
+/*******************
+the Travelers page
+*******************/
+
+#travelersContainer {
+	position: absolute;
+	top:120px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#travelersForm {
+	color: #000000;
+	width: 80%;
+	margin-left: 5%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	min-height: 400px;
+}
+
+#travelers {
+	display: inline;
+	width: 100%;
+}
+
+#travelersTable {
+	height: 400px;
+	width: 100%;
+	text-align: right;
+}
+
+#travelersTable input {
+	width: 200px;
+	margin-right: 20px;
+}
+
+#travelersTable ul
+{
+	list-style-type: none;
+}
+
+#travelersTable ul li {
+	display: block;
+	float: left;
+}
+
+.tTable {
+	width: 100%;
+}
+
+/*******************
+the Billing page
+*******************/
+
+#billingContainer {
+	position: absolute;
+	top:170px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#billingForm {
+	color: #000000;
+	width: 60%;
+	margin-left: 16%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	min-height: 300px;
+}
+
+#billing {
+	display: inline;
+	width: 100%;
+}
+
+#billingTable {
+	height: 300px;
+	width: 100%;
+	text-align: right;
+}
+
+#billingTable input {
+	width: 200px;
+	margin-right: 20px;
+}
+
+#cardMonth {
+	width: 160px;
+}
+
+/*******************
+The submit page
+*******************/
+
+#submitContainer {
+	position: absolute;
+	top:150px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#submitContainer table {
+	width: 800px;
+	height: 100px;
+	display: table;
+	margin: 0 auto;
+}
+
+/*******************
+The Check Reservation page
+*******************/
+
+#checkContainer {
+	position: absolute;
+	top:140px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#checkTable {
+	width: 90%;
+	margin-left: 5%;
+	display: table;
+}
+
+/*******************
+The Agent Report page
+*******************/
+
+#report1 {
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	margin-left: 1%;
+	width: 48%;
+	text-align: center;
+	z-index: 2;
+}
+
+#report2 {
+	position: absolute;
+	top: -10px;
+	left: 0px;
+	margin-left: 51%;
+	width: 48%;
+	text-align: center;
+	z-index: 3;
+}
+
+/*******************
+The My Account page
+*******************/
+
+#registerContainer {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	width: 100%;
+	color: #000000;
+	text-align: center;
+	z-index: 2;
+}
+
+#registerForm {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #000000;
+	width: 80%;
+	margin-left: 10%;
+	background-color: rgba(235, 235, 255, 0.65); /* Color with alpha transparency*/
+	min-height: 500px;
+}
+
+#register {
+	width: 100%;
+	display: table;
+    margin: 0 auto;
+	text-align: center;
+	list-style: none;
+}
+
+#register li {
+	width: 100%;
+    margin: 0 auto;
+}
+
+#register li table {
+	width: 600px;
+	display: table;
+	margin: 0 auto;
+}
+
+/*******************
+The rules page
+*******************/
+
+#rules {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+#rules li {
+	margin-left: 30px;
+}
+
+/*******************
+The help page
+*******************/
+
+#help {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+/*******************
+The contact page
+*******************/
+
+#contact {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+/*******************
+Footer
+*******************/
+
+#footer {
+	margin-top: 70px;
+	width: 100%;
+	height: 265px;
+	background-color: #333333;
+	text-align: center;
+	min-width: 1000px;
+}
+
+#footer ul {
+	list-style-type: none;
+	margin-top: 10px;
+}
+
+#footer ul li {
+	display: block;
+	float: left;
+	font-size: 14px;
+	width: 33%;
+}
+
+#footer ul li:last-child {
+	clear: both;
+	width: 100%;
+	margin-top: 40px;
+}
+
+#footer ul li ul li {
+	display: block;
+	float: none;
+	margin: 0px;
+	width: 100%;
+}
+
+#footer ul li ul li a {
+	font-size: 16px;
+}
+
+#footer ul li ul li:first-child {
+	font-weight: 700;
+	font-size: 18px;
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+#footer ul li ul li:last-child {
+	margin: 0px;
+}
+
+/*******************
+Global Classes
+*******************/
+
+.top {
+	font-size: 24px; 
+}
+
+.welcome {
+	font-size: 20px;
+}
+
+.smallText {
+	font-size: 16px;
+}
+
+.prettyText {
+	text-align: center; 
+	background-color: #030085; 
+	border: 1px #E0E0E0 solid; 
+	font-size: 12px; 
+	font-family: Arial, Verdana, sans-serif; 
+	color: #FFFFFF;
+}
+
+.img { cursor: pointer;}
+
+.search {
+	background-color:#030085; 
+	border:3px #E0E0E0 groove; 
+	font-size: 16px; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold; 
+	color: #FFFFFF;
+}
+
+.searchlimit { 
+	text-align: center; 
+	background-color:#FFFFFF; 
+	font-size: 16px; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold; 
+	color: #030085;
+}
+
+.select { 
+	text-align: center; 
+	background-color: #030085; 
+	border: 1px #E0E0E0 solid; 
+	font-size: 12px; 
+	font-family: Arial, Verdana, sans-serif; 
+	color: #FFFFFF; 
+	cursor: pointer;
+}
+
+.select:hover {
+	background-color: #302BFF;
+}
+
+.select:active {
+	background-color: #302BFF;
+}
+
+.selectlimit { 
+	text-align: center; 
+	background-color:#FFFFFF; 
+	font-size: 12px; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold; 
+	color: #030085;
+}
+
+.submit {
+	text-align: center; 
+	background-color:#030085; 
+	border:0px;
+	font-size: 18px; 
+	font-family: Arial, Verdana, sans-serif; 
+	color: #FFFFFF; 
+	cursor: auto;
+}
+
+.submitlimit { 
+	text-align: center; 
+	background-color:#FFFFFF; 
+	font-size: 24px; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	cursor: auto;
+}
+
+.register {
+	text-align: center; 
+	background-color:#030085; 
+	border:0px;
+	font-size: 14px; 
+	font-family: Arial, Verdana, sans-serif; 
+	color: #FFFFFF; 
+	cursor: auto;
+}
+
+.important { 
+	text-align: center; 
+	font-size: 14px; 
+	font-style: italic; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold; 
+	color: #FF0000;
+}
+
+.topbutton { 
+	border-right: 60px #FFFFFF solid; 
+	font-size: 20px; 
+	font-family: Arial, Verdana, sans-serif; 
+	font-weight: bold;
+}
+
+.footer { 
+	text-align: center; 
+	background-color:#E0E0E0; 
+	font-size: 12px; 
+	font-family: Arial, Verdana, sans-serif; 
+	color: #030085;
+}
+
+.inText {
+	width: 300px;
+	font-size: 16px; 
+	font-family: Arial, Verdana, sans-serif;
+	font-weight: bold;
+}
+
+.bg1 {
+	background-color:#030085;
+}
+
+.required, .fail {
+	color: #FF0000;
+}
+
+.sucess {
+	color: #009900;
+}
+
+.display {
+	cursor: auto;
+	height: 65px;
+	text-align: center;
+}
+
+.smallSelect {
+	width: 90px;
+}
+
+.normalSelect {
+	width: 200px;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+/*Dropdown menu for all tabs*/
+.dropDown {
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	text-align: right;
+	width: 100%;
+	background-color: rgba(235, 235, 255, 0.7); /* Color with alpha transparency*/
+	z-index: 1000;
+}
+
+.submitButton {
+	background-color: #7777ee;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.submitButton:hover {
+	background-color: #6666ff;
+	border: 2px outset #ffffff;
+}
+
+.submitButton:active {
+	background-color: #6666ff;
+	border: 2px inset #ffffff;
+}
+
+.travelerTop {
+	width: 100%;
+	height: 40px;
+	background-color: #ffffff;
+	color: #030085;
+	font-size: 24px;
+	font-weight: 800;
+	border-bottom: 2px solid #00f0ff;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.travelerTop h3 {
+	margin-left: 50px;
+	width: 250px;
+}
+
+.info {
+	font-size: 12px;
+}
+
+.right20 {
+	margin-right: 20px;
+}
+

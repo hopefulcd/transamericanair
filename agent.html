@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trans American Airlines</title>
+
+<style type="text/css">
+body {background-color:#66ccff;}
+
+#container {
+float:left;
+width:600px;
+padding: 5px;
+border: 1px solid black;
+}
+
+#left {
+float:left;
+width:155px;
+height:300px;
+margin: 10px 5px;
+padding: 5px;
+border: 1px solid grey;
+}
+
+#right {
+float:left;
+width:400px;
+height:300px;
+margin: 10px 0px;
+padding: 5px;
+border: 1px solid grey;
+}
+
+.textbox {
+color: black;
+}
+
+.radio {
+
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<div id="container">
+<div style="float:left; width:500px;">Trans American Airlines</div>
+<div style="float:left">Log In</div>
+
+<div id="left">
+<center>
+<form action="">
+<input type="button" value="Search">
+</form>
+</center>
+<br />
+<br />
+<form action="">
+<select name="tofrom">
+<option value="1">MDW - MCO</option>
+<option value="2">MDW - MEX</option>
+<option value="3" selected>LAX - MCO</option>
+<option value="4">PHX - JFK</option>
+</select>
+</form>
+</div>
+
+<div id="right">
+<center>Flight Information
+</center>
+<br />
+<br />
+<div style="float:left; width:300px; text-align:center;">Origin</div> <div style="float:left;">Destination</div>
+<div style="clear:both; width:100%;">
+<form>
+<div style="float:left;">Airport</div>
+<div style="float:right;">
+<input class="textbox" type="text" value="Chicago (MDW)" />
+<input class="textbox" type="text" value="Orlando (MCO)" />
+</div>
+<br />
+<br />
+<br />
+<br />
+<div style="float:left;">Time</div>
+<div style="float:left; width:300px; text-align:center;">Depart</div> <div style="float:left;">Arrive</div>
+<div style="float:right;">
+<input class="textbox" type="text" value="12:55 pm" />
+<input class="textbox" type="text" value="2:00 pm" />
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div style="float:left;">Price</div>
+<div style="float:right;">
+<input type="radio" name="ticket">Economy
+<input type="radio" name="ticket">Coach
+<input type="radio" name="ticket">First Class
+<input type="radio" name="ticket">Business
+</div>
+</form>
+</div>
+</div>
+
+<div style="float:left;">
+<form action="">
+<input type="button" value="+">
+
+<form action="">
+<input type="button" value="-">
+</form>
+</div>
+</body>
+</html>
